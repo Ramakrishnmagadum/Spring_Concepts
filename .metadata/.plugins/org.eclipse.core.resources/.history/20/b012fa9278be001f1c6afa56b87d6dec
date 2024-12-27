@@ -1,0 +1,14 @@
+package No_XML_Using_Annotation;
+
+import org.springframework.jdbc.core.JdbcTemplate;
+
+public class StudentDao {
+	JdbcTemplate template;
+
+	public StudentDao(JdbcTemplate template) {
+		super();
+		this.template = template;
+	}
+	
+	
+}

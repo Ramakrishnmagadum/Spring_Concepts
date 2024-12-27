@@ -1,0 +1,49 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+						http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd
+						http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop.xsd">
+
+	<!--this line will enable the Aspect annotation-->
+	<!--is used in Spring Framework configuration to enable Aspect-Oriented Programming (AOP) support using AspectJ. -->
+	<aop:aspectj-autoproxy />
+
+	<!--is used in Spring Framework configuration to enable Aspect-Oriented Programming (AOP) support using AspectJ. -->
+	<!--this line will enable the Aspect annotation-->
+	<!--   <bean
+	class="org.springframework.aop.aspectj.annotation.AnnotationAwareAspectJAutoProxyCreator"></bean>  -->
+
+	<bean id="service" class="Spring_Aop_By_Xml.MyServiceXML"></bean>
+	<bean id="track" class="Spring_Aop_By_Xml.Track_operation"></bean>
+
+<!--this before advice-->
+	<aop:config>
+		<aop:aspect id="myadvice" ref="track">
+			<aop:pointcut id="pointcut"
+				expression="execution(* Spring_Aop_By_Xml.MyServiceXML.service())"></aop:pointcut>
+			<aop:before method="before_method" pointcut-ref="pointcut"></aop:before>
+		</aop:aspect>
+	</aop:config>
+
+<!--this after advice-->
+	<aop:config>
+		<aop:aspect id="myadvice" ref="track">
+			<aop:pointcut id="pointcut"
+				expression="execution(* Spring_Aop_By_Xml.MyServiceXML.service())"></aop:pointcut>
+			<aop:after method="after_method" pointcut-ref="pointcut"></aop:after>
+		</aop:aspect>
+	</aop:config>
+
+<!--this after returning advice-->
+	<aop:config>
+		<aop:aspect id="myadvice" ref="track">
+			<aop:pointcut id="pointcut"
+				expression="execution(* Spring_Aop_By_Xml.MyServiceXML.service())"></aop:pointcut>
+			<aop:after-returning method="after_returning_method"
+				pointcut-ref="pointcut"></aop:after-returning>
+		</aop:aspect>
+	</aop:config>
+</beans>

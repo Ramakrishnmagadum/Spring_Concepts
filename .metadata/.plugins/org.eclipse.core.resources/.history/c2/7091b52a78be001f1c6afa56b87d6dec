@@ -1,0 +1,7 @@
+package No_XML_Using_Annotation;
+
+public class MainClass {
+public static void main(String[] args) {
+	
+}
+}

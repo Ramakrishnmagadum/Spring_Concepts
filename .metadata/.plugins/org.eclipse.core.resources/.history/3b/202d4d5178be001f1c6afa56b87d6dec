@@ -1,0 +1,6 @@
+package No_XML_Using_Annotation;
+
+public class StudentDao {
+	JdbcTemplate template;
+	
+}

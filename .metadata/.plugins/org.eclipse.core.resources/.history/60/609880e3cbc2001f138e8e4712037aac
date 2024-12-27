@@ -1,0 +1,10 @@
+package Proxy_Design_Pattern;
+
+public class Student_proxy  extends Studentimpl{
+
+	Student_proxy(Attendence attendence) {
+		super(attendence);
+		
+	}
+
+}

@@ -1,0 +1,25 @@
+package Proxy_Design_Pattern;
+
+import java.util.Date;
+
+public class Attendence {
+	private Date date;
+	private boolean ispresent;
+
+	public Date getDate() {
+		return date;
+	}
+
+	public void setDate(Date date) {
+		this.date = date;
+	}
+
+	public boolean isIspresent() {
+		return ispresent;
+	}
+
+	public void setIspresent(boolean ispresent) {
+		this.ispresent = ispresent;
+	}
+
+}

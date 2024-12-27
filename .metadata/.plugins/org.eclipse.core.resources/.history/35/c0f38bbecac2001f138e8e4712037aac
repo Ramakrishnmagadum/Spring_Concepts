@@ -1,0 +1,12 @@
+package Proxy_Design_Pattern;
+
+public class Studentimpl implements Student{
+
+	Attendence attendence;
+	
+	@Override
+	public void attendlession(Attendence attendence) {
+		
+	}
+
+}

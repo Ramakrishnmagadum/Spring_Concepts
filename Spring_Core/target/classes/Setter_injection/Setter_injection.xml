@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans  
+               http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+
+	<!-- <normal way of setter injection -->
+	<bean id="primitive_bean" class="Setter_injection.primitive_Bean">
+		<property name="name" value="ram" /><!-- here name is varible 
+			name in Bean... -->
+		<property name="num" value="12" />
+		<property name="surname" value="magadum" />
+	</bean>
+
+	<!-- By using P schema Setter Injection -->
+	<bean id="primitive_bean1" class="Setter_injection.primitive_Bean"
+	p:name="prashant" p:num="12" p:surname="magadum"></bean>
+	
+	
+<!-- 	Refrence Object Setter Injection -->
+<bean id="refrence" class="Setter_injection.Refrence_Bean">
+<property name="city" value="Belagavi"></property>
+<property name="bean" ref="primitive_bean"></property>
+</bean>
+
+<!-- By using P schema Setter Injection -->
+	<bean id="refrence1" class="Setter_injection.Refrence_Bean"
+	p:city="SNK"  p:bean-ref="primitive_bean1"></bean>
+	
+</beans>  

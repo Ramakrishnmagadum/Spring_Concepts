@@ -1,0 +1,6 @@
+package Reflection_APi;
+
+public interface Student {
+
+	public void attendlession();
+}

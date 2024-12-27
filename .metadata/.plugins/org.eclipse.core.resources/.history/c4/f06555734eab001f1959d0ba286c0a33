@@ -1,0 +1,9 @@
+package com.Spring.Spring_Demo;
+
+public class StudentBean {
+
+	String name;
+	String sur_name;
+	int age;
+	
+}

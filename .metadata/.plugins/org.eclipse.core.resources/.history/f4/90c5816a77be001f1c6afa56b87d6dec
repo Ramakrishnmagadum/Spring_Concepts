@@ -1,0 +1,24 @@
+package No_XML_Using_Annotation;
+
+import javax.sql.DataSource;
+
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
+import org.springframework.jdbc.core.JdbcTemplate;
+import org.springframework.jdbc.datasource.DriverManagerDataSource;
+
+@Configuration
+public class javaConfig {
+
+	@Bean("template")
+	public JdbcTemplate gettemplate() {
+		JdbcTemplate template=new JdbcTemplate();
+		template.setDataSource(null);
+		return template;
+	}
+	
+	public DriverManagerDataSource datasource() {
+		DriverManagerDataSource ds=new DriverManagerDataSource();
+		
+	}
+}

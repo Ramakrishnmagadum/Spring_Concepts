@@ -1,0 +1,69 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:util="http://www.springframework.org/schema/util"
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+						http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd
+						http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop.xsd
+						http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util.xsd">
+
+	<!--   this is for ArrayList here we decalred as global varibale , just we can
+	call by id and inject it..-->
+	<util:list list-class="java.util.ArrayList" id="list">
+		<value>java</value>
+		<value>c-sharp</value>
+		<value>python</value>
+	</util:list>
+	<!--for HashMap-->
+	<util:map map-class="java.util.HashMap" id="map">
+		<entry key="1" value="100"></entry>
+		<entry key="2" value="89"></entry>
+		<entry key="3" value="76"></entry>
+	</util:map>
+
+
+	<bean id="student" class="StandAlone_Collections.StudentBean">
+		<property name="name" value="ramakrishna"></property>
+		<property name="subject" ref="list"></property>
+		<property name="marks" ref="map"></property>
+		<property name="props" ref="dbConfig"></property>
+	</bean>
+
+	<bean id="studentcopy" class="StandAlone_Collections.StudentBean">
+		<property name="name" value="Aditi"></property>
+		<property name="subject" ref="list"></property>
+		<property name="marks" ref="map"></property>
+		<property name="props" ref="dbConfig"></property>
+	</bean>
+
+
+	<!--   this is for LinkedList-->
+	<util:list list-class="java.util.LinkedList" id="list2">
+		<value>CAD</value>
+		<value>TM</value>
+		<value>DOM</value>
+	</util:list>
+	<!--this for TreeMap-->
+	<util:map map-class="java.util.TreeMap" id="map2">
+		<entry key="1" value="100"></entry>
+		<entry key="2" value="89"></entry>
+		<entry key="3" value="76"></entry>
+	</util:map>
+
+	<bean id="student2" class="StandAlone_Collections.StudentBean">
+		<property name="name" value="prashant"></property>
+		<property name="subject" ref="list2"></property>
+		<property name="marks" ref="map2"></property>
+		<property name="props" ref="dbConfig"></property>
+	</bean>
+
+
+	<!--properties -->
+	<util:properties id="dbConfig">
+		<prop key="username">ShreeNidhi</prop>
+		<prop key="password">Sister</prop>
+	</util:properties>
+
+</beans>

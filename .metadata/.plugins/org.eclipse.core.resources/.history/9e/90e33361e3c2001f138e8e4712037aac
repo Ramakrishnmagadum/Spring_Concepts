@@ -1,0 +1,32 @@
+package Reflection_APi;
+
+import java.lang.reflect.Method;
+
+/**
+ * Hello world!
+ *
+ */
+public class Teacher 
+{
+    public static void main( String[] args ) throws ClassNotFoundException
+    {
+//    	Studentimpl student =new Student_proxy(new Attendence("ramakrishna",true));
+//    	student.attendlession();
+//    	System.out.println("completed");
+    	
+    	Class<Student_proxy> object = (Class<Student_proxy>) Class.forName("Reflection_APi.Student_proxy");
+    	Method[] method = object.getDeclaredMethods();
+    	for(Method m: method) {
+//    		System.out.println(m.getName());
+    		
+    	}
+    	
+     	Method[] methods = object.getMethods();
+    	for(Method m: methods) {
+    		System.out.println(m.getName());
+    		
+    	}
+    	
+    	System.out.println("End of Program");
+    	}
+}

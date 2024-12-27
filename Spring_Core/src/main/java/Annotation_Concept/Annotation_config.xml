@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+						http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
+
+
+<!--it is used to scan the annotation and enable it-->
+<context:component-scan base-package="Annotation_Concept" />
+
+<!--this is byname concept-->
+<!--	<bean id="bean" class="Annotation_Concept.Xml_Dependent_Bean">-->
+<!--		<property name="name" value="ramakrishna"></property>-->
+<!--		<property name="num" value="123"></property>-->
+<!--	</bean>-->
+
+<!--this will check is thier any bean-id present with varible name , if present it will inject else return null..-->
+<!--if present more then one , it will get confuse and it will thorws error-->
+<!--	<bean id="target_byName" class="Annotation_Concept.Xml_Target_Bean"-->
+<!--		autowire="byName">-->
+<!--		<property name="surname" value="magadum"></property>-->
+<!--	</bean>-->
+	
+	
+<!--	this is byType Concept-->
+	<bean id="dependent" class="Annotation_Concept.Xml_Dependent_Bean">
+		<property name="name" value="ramakrishna"></property>
+		<property name="num" value="123"></property>
+	</bean>
+
+<!--this will check is thier any bean present with same type of Bean , if present it will inject else return null..-->
+<!--if present more then one , it will get confuse and it will thorws error-->
+<!--	<bean id="target_byType" class="Annotation_Concept.Xml_Target_Bean"-->
+<!--		autowire="byType">-->
+<!--		<property name="surname" value="magadum"></property>-->
+<!--	</bean>-->
+	
+
+
+<!-- this is constrcutor type-->
+<!--			<bean id="target_constructor" class="Annotation_Concept.Xml_Target_Bean"-->
+<!--			autowire="constructor">-->
+<!--			<constructor-arg value="surname"></constructor-arg></bean>-->
+
+			<bean id="target_annotation" class="Annotation_Concept.Annotation_bean">
+			</bean>
+	
+		
+</beans>

@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans  
+               http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+
+	<!-- Constructor Injection -->
+	<!-- Primitive data type Constructor Injection -->
+	<bean id="primitive" class="ConstructorInjection.primitive_Bean">
+		<constructor-arg value="12" type="int"></constructor-arg>
+	</bean>
+
+	<bean id="primitive1" class="ConstructorInjection.primitive_Bean">
+		<constructor-arg value="12"></constructor-arg><!-- if type not 
+			mentoined it will consider String Type -->
+	</bean>
+
+	<bean id="primitive2" class="ConstructorInjection.primitive_Bean">
+		<constructor-arg value="12"></constructor-arg>
+		<constructor-arg value="true" type="boolean"></constructor-arg>
+		<constructor-arg value="Ramakrishna"></constructor-arg>
+	</bean>
+
+
+	<!-- Depedent Object Constructor Injection -->
+	<bean id="depedent1" class="ConstructorInjection.Depedent_Bean">
+		<constructor-arg value="Ramakrishna"></constructor-arg>
+		<constructor-arg value="12"></constructor-arg>
+	</bean>
+
+	<bean id="target1" class="ConstructorInjection.Target_Bean">
+		<constructor-arg value="Prashant"></constructor-arg>
+		<constructor-arg value="1"></constructor-arg>
+		<constructor-arg>
+			<ref bean="depedent1" /><!-- This line inject Depedent Object into 
+				the target Object... -->
+		</constructor-arg>
+	</bean>
+
+
+	<!-- List Constructor Injection -->
+	<bean id="list1" class="ConstructorInjection.List_Bean">
+		<constructor-arg value="12"></constructor-arg>
+		<constructor-arg>
+			<list>
+				<value>Java</value>
+				<value>Python</value>
+				<value>C-Sharp</value>
+			</list>
+		</constructor-arg>
+	</bean>
+
+
+	<!-- Map Constructor Injection -->
+	<bean id="map1" class="ConstructorInjection.Map_Bean">
+		<constructor-arg value="12"></constructor-arg>
+		<constructor-arg>
+			<map>
+				<entry key="1" value="java"></entry>
+				<entry key="2" value="Python"></entry>
+				<entry key="3" value="Csharp"></entry>
+			</map>
+		</constructor-arg>
+	</bean>
+
+	<!-- Set Constructor Injection -->
+	<bean id="set1" class="ConstructorInjection.Set_Bean">
+		<constructor-arg value="12"></constructor-arg>
+		<constructor-arg>
+			<set>
+				<value>10</value>
+				<value>10</value>
+				<value>20</value>
+			</set>
+		</constructor-arg>
+	</bean>
+
+	<!-- List object constructor injection -->
+	<bean id="listobject1" class="ConstructorInjection.List_Bean">
+		<constructor-arg value="12"></constructor-arg>
+		<constructor-arg>
+			<list>
+				<value>first</value>
+				<value>second</value>
+				<value>third</value>
+			</list>
+		</constructor-arg>
+	</bean>
+
+	<bean id="listobject2" class="ConstructorInjection.List_Bean">
+		<constructor-arg value="22"></constructor-arg>
+		<constructor-arg>
+			<list>
+				<value> first2</value>
+				<value> second2</value>
+				<value> third2</value>
+			</list>
+		</constructor-arg>
+	</bean>
+
+	<bean id="listobject3" class="ConstructorInjection.List_Bean">
+		<constructor-arg value="32"></constructor-arg>
+		<constructor-arg>
+			<list>
+				<value> first3</value>
+				<value> second3</value>
+				<value> third3</value>
+			</list>
+		</constructor-arg>
+	</bean>
+
+	<bean id="listobject"
+		class="ConstructorInjection.List_Object_Bean">
+		<constructor-arg value="10"></constructor-arg>
+		<constructor-arg>
+			<list>
+				<ref bean="listobject1" />
+				<ref bean="listobject2" />
+				<ref bean="listobject3" />
+			</list>
+		</constructor-arg>
+	</bean>
+
+
+
+	<!-- All in one -->
+	<bean id="all_in_one_bean"
+		class="ConstructorInjection.All_In_One_Bean">
+		<constructor-arg value="12" type="int" index="0"></constructor-arg>
+		<constructor-arg value="ramakrishna" type="String"></constructor-arg>
+		<constructor-arg ref="listobject2"></constructor-arg>
+		<constructor-arg>
+			<list>
+				<value>belagavi</value>
+			</list>
+		</constructor-arg>
+		<constructor-arg>
+			<list>
+				<ref bean="listobject1" />
+				<ref bean="listobject2" />
+				<ref bean="listobject3" />
+			</list>
+		</constructor-arg>
+	</bean>
+
+
+</beans>  

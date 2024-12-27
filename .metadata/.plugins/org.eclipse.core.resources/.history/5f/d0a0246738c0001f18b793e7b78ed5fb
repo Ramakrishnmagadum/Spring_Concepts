@@ -1,0 +1,13 @@
+package springHibernate;
+
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
+
+import Dao.StudentDao;
+
+public class MainClass {
+public static void main(String[] args) {
+	ApplicationContext context=new ClassPathXmlApplicationContext("applicationcontext.xml");
+	StudentDao dao=context.getBean("studentdao", StudentDao.class);
+}
+}

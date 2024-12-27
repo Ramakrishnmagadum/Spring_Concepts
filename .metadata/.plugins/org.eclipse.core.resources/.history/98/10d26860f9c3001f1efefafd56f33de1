@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+                           http://www.springframework.org/schema/beans/spring-beans.xsd
+                           http://www.springframework.org/schema/context
+                           http://www.springframework.org/schema/context/spring-context.xsd">
+
+	<context:component-scan
+		base-package="Spring_Bean_Life_Cycle" />
+
+	<bean id="bean" class="Autowiring_Annotation.XML_Autowiring_Dependent_Bean">
+	<property name="age" value="12"></property>
+	<property name="name" value="ramakrishna"></property>
+	</bean>
+	
+		<bean id="bean2" class="Autowiring_Annotation.XML_Autowiring_Dependent_Bean">
+	<property name="age" value="15"></property>
+	<property name="name" value="prashant"></property>
+	</bean>
+	
+	
+<!-- 	<bean name="xml_target" class="Autowiring_Annotation.AML_Autowiring_target_Bean" autowire="byName"> -->
+<!-- 	</bean> -->
+	
+	<bean name="xml_target_type" class="Autowiring_Annotation.AML_Autowiring_target_Bean" autowire="byType">
+	</bean>
+
+
+</beans>  
