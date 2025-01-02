@@ -1,0 +1,13 @@
+package Transactional_Management;
+
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
+
+public class MainClass {
+public static void main(String[] args) {
+	ApplicationContext context=new AnnotationConfigApplicationContext(javaconfig.class);
+	Studentrepo  student=(Studentrepo) context.getBean("studentrepo");
+	student.savestudentinfo();
+	System.out.println("student saved");
+}
+}

@@ -1,6 +1,0 @@
-package Entities;
-
-public class StudentBean {
-	int age;
-	String name;
-}

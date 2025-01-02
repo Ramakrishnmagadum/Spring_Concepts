@@ -1,0 +1,30 @@
+package Transactional_Management;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.jdbc.core.JdbcTemplate;
+import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Repository;
+
+@Repository
+public class Studentrepo {
+	@Autowired
+	JdbcTemplate template;
+	
+	public void savestudentinfo() {
+		
+		String sql="insert into studentbean values(? , ?)";
+		
+		for(int i=1;i<=10;i++) {
+			StudentBean student =new StudentBean();
+			student.setAge(i);
+			student.setName("name "+i);
+			template.update(sql, student.getAge(),student.getName());
+			
+			//i will throw exception before completing whole task
+			if(i==7) {
+				throw RuntimeException("runtime exception throwing ");
+			}
+		}
+	}
+
+}

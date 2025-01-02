@@ -1,0 +1,5 @@
+package Dyanamic_proxy;
+
+public interface IEmplyoee {
+
+}

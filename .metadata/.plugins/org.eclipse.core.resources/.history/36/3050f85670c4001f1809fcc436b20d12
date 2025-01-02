@@ -1,0 +1,21 @@
+package Dyanamic_proxy;
+
+public class IEmployee implements Emplyoee {
+
+	int salalry;
+	int hike;
+	
+	@Override
+	public void givehike(int amount) {
+		this.hike=this.salalry+amount;
+		System.out.println("after hike slaary "+hike);
+	}
+
+	@Override
+	public void salary(int salary) {
+		this.salalry;
+		
+	}
+
+	
+}

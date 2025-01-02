@@ -1,0 +1,12 @@
+package Transactional_Management_Practice;
+
+import org.springframework.stereotype.Repository;
+
+@Repository
+public class Studentrepo {
+	
+	public void savestudent() {
+		
+	}
+
+}

@@ -1,0 +1,7 @@
+package Dyanamic_proxy;
+
+import java.lang.reflect.InvocationHandler;
+
+public class EmplyoeesalaryinvocationHandler  implements InvocationHandler{
+
+}

@@ -1,0 +1,11 @@
+package Transactional_Management_Practice;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.jdbc.core.JdbcTemplate;
+
+public class StudentDao {
+	
+	@Autowired
+	JdbcTemplate jdbcTemplate;
+
+}

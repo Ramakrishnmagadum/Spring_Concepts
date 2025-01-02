@@ -1,0 +1,22 @@
+package Transactional_Management;
+
+import org.springframework.stereotype.Component;
+
+
+public class StudentBean {
+int age;
+String name;
+public int getId() {
+	return age;
+}
+public void setId(int id) {
+	this.age = id;
+}
+public String getName() {
+	return name;
+}
+public void setName(String name) {
+	this.name = name;
+}
+
+}

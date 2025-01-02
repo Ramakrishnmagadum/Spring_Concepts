@@ -1,0 +1,50 @@
+package Transactional_Management_2;
+
+import java.lang.reflect.Proxy;
+import java.sql.Connection;
+
+import org.aspectj.lang.ProceedingJoinPoint;
+import org.aspectj.lang.annotation.Around;
+import org.aspectj.lang.annotation.Aspect;
+import org.aspectj.lang.annotation.Before;
+import org.springframework.stereotype.Component;
+
+import com.mysql.cj.jdbc.ConnectionImpl;
+
+@Component
+@Aspect
+public class TrackingAop {
+	
+	
+	
+	@Before("execution(* StudentService.savestudent())")
+	public void beforemethod() {
+		System.out.println("before StudentService.savestudent()");
+	}
+	
+	@Before("execution(* Studentrepo.savestudentinfo(..))")
+	public void beforemethod1() {
+		System.out.println("before Studentrepo.savestudentinfo()");
+	}
+	
+    @Around("target(javax.sql.DataSource)")
+	public Object beforemethod(ProceedingJoinPoint proceedingJoinPoint) throws Throwable {
+    	//pre processing
+		System.out.println("Method name "+proceedingJoinPoint.getSignature());
+		
+		
+		//actual process
+		Object returnvalue=proceedingJoinPoint.proceed();
+		
+		connectionimplinvocationhandler connectionimplinvocationhandler=new connectionimplinvocationhandler((Connection)returnvalue);
+		Connection connection=(Connection) Proxy.newProxyInstance(ConnectionImpl.class.getClassLoader(),
+				new Class[] {Connection.class},
+				connectionimplinvocationhandler);
+
+
+		//post processing
+		return returnvalue;
+		
+	}
+
+}

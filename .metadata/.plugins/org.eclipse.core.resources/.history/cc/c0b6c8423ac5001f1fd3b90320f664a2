@@ -1,0 +1,19 @@
+package Transactional_Management_2;
+
+import javax.transaction.Transactional;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+@Service
+public class StudentService {
+	@Autowired
+	Studentrepo studentrepo;
+	
+	//if we used this annotation on top of the any class then ---> every method inside that class will manage transaction...
+	@Transactional 
+	public void savestudent() {
+		studentrepo.savestudentinfo();	
+	}
+
+}

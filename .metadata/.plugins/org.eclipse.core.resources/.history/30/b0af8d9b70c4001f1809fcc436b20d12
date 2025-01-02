@@ -1,0 +1,7 @@
+package Dyanamic_proxy;
+
+public interface Emplyoee {
+
+	void givehike(int amount);
+	void salary(int salary);
+}

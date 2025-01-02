@@ -1,0 +1,16 @@
+package Dyanamic_proxy;
+
+public class MainClass {
+public static void main(String[] args) {
+	IEmployee emp=new IEmployee();
+	emp.setsalary(5000);
+	emp.givehike(1000);
+	emp.salary();
+	
+	
+	//but i want to validate hike amount should be positive .. so i need to validate this one --But not in my class ..i want to validate in internally 
+	//internally means --> in some other layer or before performing the certain operation --i want to call and i will validate by this method...
+	
+	
+}
+}

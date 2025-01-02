@@ -1,0 +1,10 @@
+package Dyanamic_proxy;
+
+public class MainClass {
+public static void main(String[] args) {
+	IEmployee emp=new IEmployee();
+	emp.givehike(1000);
+	emp.salary();
+	
+}
+}

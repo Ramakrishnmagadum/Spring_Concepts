@@ -1,0 +1,19 @@
+package Transactional_Management;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.jdbc.core.JdbcTemplate;
+
+public class Studentrepo {
+	@Autowired
+	JdbcTemplate template;
+	
+	public void savestudentinfo() {
+		
+		String sql="insert into student values(? , ?)";
+		
+		for(int i=1;i<=10;i++) {
+			
+		}
+	}
+
+}

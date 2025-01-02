@@ -1,0 +1,6 @@
+package Dyanamic_proxy;
+
+public interface Emplyoee {
+
+	void givehike()
+}

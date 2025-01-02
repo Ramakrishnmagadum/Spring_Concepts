@@ -8,7 +8,7 @@ public static void main(String[] args) {
 	ApplicationContext context=new AnnotationConfigApplicationContext(javaConfig.class);
 	StudentBean std=context.getBean("student",StudentBean.class);
 	StudentDao dao=context.getBean("studentdao" ,StudentDao.class);
-	std.setAge(34);
+	std.setAge(36);
 	std.setName("ramakrishna");
 	dao.insert(std);
 	System.out.println("values are inserted");

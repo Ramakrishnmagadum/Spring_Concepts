@@ -1,0 +1,5 @@
+package Dyanamic_proxy;
+
+public class IEmployee {
+
+}

@@ -1,0 +1,8 @@
+package Dyanamic_proxy;
+
+public class IEmployee implements Emplyoee {
+
+	public static void main(String[] args) {
+		
+	}
+}

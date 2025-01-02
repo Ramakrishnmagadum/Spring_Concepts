@@ -1,0 +1,10 @@
+package Dyanamic_proxy;
+
+public class client {
+public static void main(String[] args) {
+	ITEmpyoee itEmpyoee=new ITEmpyoee();
+	itEmpyoee.setId(101);
+	itEmpyoee.setName("ramakrishna");
+	itEmpyoee.setSalary(30000);
+}
+}

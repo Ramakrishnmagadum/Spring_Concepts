@@ -1,0 +1,6 @@
+package Dyanamic_proxy;
+
+public class IEmplyoee {
+void giveHike(double amount);
+
+}

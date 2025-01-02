@@ -7,7 +7,7 @@ public class Collection_injection {
 	public static void main(String[] args) {
 
 		ApplicationContext context = new ClassPathXmlApplicationContext("ConstructorInjection/Constructor_injection.xml");
-
+ 
 		// list Injection
 		List_Bean bean = (List_Bean) context.getBean("list1");
 		System.out.println(bean);

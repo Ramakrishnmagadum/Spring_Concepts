@@ -1,0 +1,19 @@
+package Transactional_Management_Practice;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+@Service
+public class StudentService {
+	@Autowired
+	Studentrepo studentrepo;
+	public void savestudentinfo() {
+		for(int i=1;i<=10;i++) {
+			StudentBean student=new StudentBean();
+			student.setAge(i);
+			student.setName("name "+i);
+			studentrepo.savestudent(student);
+			System.out.println("name "+i +"saved");
+		}	
+	}
+}

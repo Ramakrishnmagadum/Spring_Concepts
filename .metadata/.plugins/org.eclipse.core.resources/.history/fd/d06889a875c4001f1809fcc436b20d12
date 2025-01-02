@@ -1,0 +1,26 @@
+package Dyanamic_proxy;
+
+import java.lang.reflect.InvocationHandler;
+import java.lang.reflect.Method;
+
+public class EmplyoeesalaryinvocationHandler  implements InvocationHandler{
+	ITEmpyoee itEmpyoee;
+	public EmplyoeesalaryinvocationHandler(ITEmpyoee itEmpyoee) {
+		this.itEmpyoee=itEmpyoee;
+	}
+
+	@Override
+	public Object invoke(Object proxy, Method method, Object[] args) throws Throwable {
+	   //pre processing
+		
+		
+		//actual logic
+		
+		
+		//post processing
+		
+		
+		return null;
+	}
+
+}
